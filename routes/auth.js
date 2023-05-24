@@ -1,10 +1,10 @@
 /*
-    Ruta: /api/login
+    Ruta: /api/auth
 */
 const { Router } = require('express');
 const { check } = require('express-validator');
 
-const { login, renewToken, register, updateProfile } = require('../controllers/auth');
+const { login, renewToken, register, updateProfile, recuperarContrasena, resetPassword } = require('../controllers/auth');
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
 
@@ -31,5 +31,12 @@ router.put('/update/:id', [
 
 router.get('/renew', validarJWT, renewToken);
 
+router.post('/forgot-password', recuperarContrasena);
+
+// resetPassword
+router.post('/reset-password', [
+    check('newPassword', 'La nueva contraseña es obligatorio').not().isEmpty(),
+    validarCampos,
+], resetPassword);
 
 module.exports = router;

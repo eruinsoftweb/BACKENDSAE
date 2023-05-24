@@ -24,11 +24,6 @@ const EstudianteSchema = Schema({
         enum: ['EBR', 'CEBA'],
         required: [true, 'La modalidad es obligatoria'],
     },
-    modalidad: {
-        type: String,
-        enum: ['PRESENCIAL', 'VIRTUAL', 'PERIFERICO'],
-        required: [true, 'La modalidad es obligatoria'],
-    },
     correo: {
         type: String,
     },
