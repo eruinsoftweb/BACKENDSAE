@@ -72,6 +72,7 @@ app.use('/api/login', require('./routes/auth'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/usuarios', require('./routes/usuarios'));
 app.use('/api/grados', require('./routes/grados'));
+app.use('/api/asignaturas', require('./routes/asignaturas'));
 app.use('/api/tipos_activo', require('./routes/tipos_activo'));
 app.use('/api/activos', require('./routes/activos'));
 app.use('/api/inmobiliarios', require('./routes/inmobiliarios'));

@@ -2,53 +2,34 @@ const { response } = require('express');
 const Grado = require('../models/grado');
 
 const getGrados = async (req, res = response) => {
-
     try {
-
         const sort = { updatedAt: -1 };
-
-        const grados = await Grado.find().populate('modalidad',
-        'nombre descripcion estado createdAt updatedAt').sort(sort);
-
+        const grados = await Grado.find().populate('modalidad','nombre descripcion estado createdAt updatedAt').sort(sort);
         res.json(grados);
-
     } catch (error) {
-
         console.log(error);
-
         res.status(500).json({
             ok: false,
             msg: 'Hable con el administrador'
         });
-
     }
 }
-
 const getGrado = async (req, res = response) => {
     try {
-        
         const sort = { updatedAt: -1 };
-
-        const grado = await Grado.findById(req.params.id).populate('modalidad',
-        'nombre descripcion estado createdAt updatedAt').sort(sort);
-
+        const grado = await Grado.findById(req.params.id).populate('modalidad','nombre descripcion estado createdAt updatedAt').sort(sort);
         res.json(grado);
-
     } catch (error) {
-
         console.log(error);
         res.status(500).json({
             ok: false,
             msg: 'Hable con el administrador'
         });
-
     }
 }
 
 const crearGrado = async (req, res = response) => {
-
     try {
-
         const nombre = req.body.nombre.toUpperCase();
         const descripcion = req.body.descripcion.toUpperCase();
         const modalidad = req.body.modalidad;
@@ -74,8 +55,7 @@ const crearGrado = async (req, res = response) => {
 
         await grado.save();
 
-        const grados = await grado.populate('modalidad',
-        'nombre descripcion estado createdAt updatedAt');
+        const grados = await grado.populate('modalidad','nombre descripcion estado createdAt updatedAt');
 
         res.status(201).json(grados);
 
@@ -106,8 +86,7 @@ const actualizarGrado = async (req, res = response) => {
 
         const sort = { updatedAt: -1 };
 
-        const gradoActualizado = await Grado.findByIdAndUpdate(req.params.id, nuevoGrado, { new: true }).populate('modalidad',
-        'nombre descripcion estado createdAt updatedAt').sort(sort);
+        const gradoActualizado = await Grado.findByIdAndUpdate(req.params.id, nuevoGrado, { new: true }).populate('modalidad','nombre descripcion estado createdAt updatedAt').sort(sort);
 
         res.json(gradoActualizado);
 

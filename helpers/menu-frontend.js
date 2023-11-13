@@ -82,11 +82,19 @@ const getMenuFrontEnd = (role, modalidad) => {
                         icono: 'MdGrade',
                         path: '/grados'
                     },
+
+                    {
+                        titulo: 'Asignaturas',
+                        icono: 'FaBook',
+                        path: '/asignaturas'  // Asegúrate de que la ruta sea la correcta
+                    },
+
                     {
                         titulo: 'Estudiantes',
                         icono: 'RiUserStarFill',
                         path: '/ebr/estudiantes'
                     },
+
                     {
                         titulo: 'Pagos',
                         icono: 'MdMonetizationOn',
@@ -96,36 +104,6 @@ const getMenuFrontEnd = (role, modalidad) => {
                         titulo: 'Docentes',
                         icono: 'FaChalkboardTeacher',
                         path: '/ebr/docentes'
-                    },
-                    {
-                        titulo: 'Equipos',
-                        icono: 'RiComputerFill',
-                        path: '/ebr/equipos'
-                    },
-                    {
-                        titulo: 'Libros',
-                        icono: 'RiBook3Fill',
-                        path: '/ebr/libros'
-                    },
-                    {
-                        titulo: 'Inmobiliarios',
-                        icono: 'MdTableChart',
-                        path: '/ebr/inmobiliarios'
-                    },
-                    {
-                        titulo: 'Uniformes',
-                        icono: 'FaVest',
-                        path: '/ebr/uniformes'
-                    },
-                    {
-                        titulo: 'Mapas',
-                        icono: 'RiMapPin4Fill',
-                        path: '/ebr/mapas'
-                    },
-                    {
-                        titulo: 'Laboratorios',
-                        icono: 'MdScience',
-                        path: '/ebr/laboratorios'
                     },
                     {
                         titulo: 'Reportes',
@@ -207,46 +185,19 @@ const getMenuFrontEnd = (role, modalidad) => {
                         icono: 'MdMonetizationOn',
                         path: '/ebr/pagos'
                     },
+
+                    {
+                        titulo: 'Asignaturas',
+                        icono: 'FaBook',
+                        path: '/asignaturas'  // Asegúrate de que la ruta sea la correcta
+                    },
+                    
                     {
                         titulo: 'Docentes',
                         icono: 'FaChalkboardTeacher',
                         path: '/ebr/docentes'
                     },
-                    {
-                        titulo: 'Equipos',
-                        icono: 'RiComputerFill',
-                        path: '/ebr/equipos'
-                    },
-                    {
-                        titulo: 'Libros',
-                        icono: 'RiBook3Fill',
-                        path: '/ebr/libros'
-                    },
-                    {
-                        titulo: 'Inmobiliarios',
-                        icono: 'MdTableChart',
-                        path: '/ebr/inmobiliarios'
-                    },
-                    {
-                        titulo: 'Uniformes',
-                        icono: 'FaVest',
-                        path: '/ebr/uniformes'
-                    },
-                    {
-                        titulo: 'Mapas',
-                        icono: 'RiMapPin4Fill',
-                        path: '/ebr/mapas'
-                    },
-                    {
-                        titulo: 'Laboratorios',
-                        icono: 'MdScience',
-                        path: '/ebr/laboratorios'
-                    },
-                    {
-                        titulo: 'Reportes',
-                        icono: 'FaChartPie',
-                        path: '/ebr/reportes'
-                    }
+
                 );
                 break;
         }
@@ -258,4 +209,3 @@ const getMenuFrontEnd = (role, modalidad) => {
 module.exports = {
     getMenuFrontEnd
 }
-
